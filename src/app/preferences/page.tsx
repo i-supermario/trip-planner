@@ -241,17 +241,17 @@ export default function TripPreferences() {
           </Card>
 
           {/* Results in Tabs */}
-          {route && (
+          {route.start && (
             <Card className="shadow-lg w-2xl pt-0 border-none">
               <Tabs defaultValue="list" className="w-full">
                 <TabsList className="grid grid-cols-2 w-full">
                   <TabsTrigger value="list">Route List</TabsTrigger>
                   <TabsTrigger value="map">Map View</TabsTrigger>
                 </TabsList>
-                <TabsContent value="list">
+                <TabsContent className="h-full" value="list">
                   <RouteDisplay route={route} error={error} onReorderStops={() => {}} />
                 </TabsContent>
-                <TabsContent value="map">
+                <TabsContent className="h-full" value="map">
                   <MapView routeData={route} />
                 </TabsContent>
               </Tabs>
